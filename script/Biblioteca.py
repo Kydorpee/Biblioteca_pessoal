@@ -2,12 +2,19 @@ import os
 livros = []
 input_opcao = 0
 
-def iniciar_app():
-    print("Bem vindo a sua biblioteca pessoal!")
+def iniciar_app(texto):
+    os.system('cls')
+    print("================================")
+    print(texto)
+    print("================================")
+
 def chamar_menu():
+    os.system('cls')
+
     print("================================")
-    print("Escolha uma opção:")
+    print("Bem-vindo à Biblioteca!")
     print("================================")
+    print("Escolha uma opção:\n")
     print("1 - Cadastrar livro")
     print("2 - Listar livros")
     print("3 - Editar livro")
@@ -33,18 +40,25 @@ def chamar_menu():
         chamar_menu()
 
 def cadastrar_livro():
-    print("Cadastro de um novo livro:")
+    iniciar_app("Cadastro de um novo livro")
+    input("Pressione Enter para voltar ao menu...")
+    chamar_menu()
 def listar_livros():
-    print("Lista de livros cadastrados:")
+    iniciar_app("Lista de livros cadastrados")
+    input("Pressione Enter para voltar ao menu...")
+    chamar_menu()
 def editar_livro():
-    print("Editar um livro cadastrado:")
+    iniciar_app("Edição de um livro cadastrado")
+    input("Pressione Enter para voltar ao menu...")
+    chamar_menu()
 def sair():
-    print("Saindo da aplicação...")
+    iniciar_app("Saindo da aplicação...")
+    
+    
     
 
 
 def main():
-    iniciar_app()
     chamar_menu()
 
 if __name__ == "__main__":
