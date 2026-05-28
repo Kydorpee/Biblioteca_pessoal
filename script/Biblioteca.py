@@ -31,7 +31,7 @@ def chamar_menu():
             editar_livro()
         elif opcoes == 0:
             print("Saindo da aplicação...")
-            exit()
+            sair()
         else:
             print("Opção inválida. Tente novamente.")
             chamar_menu()
