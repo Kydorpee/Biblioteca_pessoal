@@ -40,9 +40,12 @@ def chamar_menu():
         chamar_menu()
 
 def cadastrar_livro():
-    iniciar_app("Cadastro de um novo livro")
+    novo_livro = input("Digite o nome do livro a ser cadastrado: ")
+    livros.append(novo_livro)
+    print(f"Livro '{novo_livro}' cadastrado com sucesso!")
     input("Pressione Enter para voltar ao menu...")
     chamar_menu()
+  
 def listar_livros():
     iniciar_app("Lista de livros cadastrados")
     input("Pressione Enter para voltar ao menu...")
