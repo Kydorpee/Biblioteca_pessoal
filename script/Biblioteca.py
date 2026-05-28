@@ -1,5 +1,5 @@
 import os
-livros = []
+livros = {}
 input_opcao = 0
 
 def iniciar_app(texto):
@@ -7,7 +7,6 @@ def iniciar_app(texto):
     print("================================")
     print(texto)
     print("================================")
-
 def chamar_menu():
     os.system('cls')
 
@@ -40,9 +39,15 @@ def chamar_menu():
         chamar_menu()
 
 def cadastrar_livro():
-    novo_livro = input("Digite o nome do livro a ser cadastrado: ")
-    livros.append(novo_livro)
-    print(f"Livro '{novo_livro}' cadastrado com sucesso!")
+
+    iniciar_app("Cadastro de um novo livro")
+    nome_livro = input("Digite o nome do livro a ser cadastrado: ")
+    autor_livro = input("Digite o nome do autor do livro: ")
+    novo_livro = {"livro": nome_livro, "autor": autor_livro, "status": True}
+    
+    livros[nome_livro] = novo_livro
+
+    print(f"Livro '{nome_livro}' cadastrado com sucesso!")
     input("Pressione Enter para voltar ao menu...")
     chamar_menu()
   
