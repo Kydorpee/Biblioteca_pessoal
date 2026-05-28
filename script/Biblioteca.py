@@ -55,7 +55,9 @@ def editar_livro():
     input("Pressione Enter para voltar ao menu...")
     chamar_menu()
 def sair():
+    os.system('cls')
     iniciar_app("Saindo da aplicação...")
+    
     
     
     
