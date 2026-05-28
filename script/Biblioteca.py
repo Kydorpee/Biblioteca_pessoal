@@ -44,7 +44,7 @@ def cadastrar_livro():
     nome_livro = input("Digite o nome do livro a ser cadastrado: ")
     autor_livro = input("Digite o nome do autor do livro: ")
     novo_livro = {"livro": nome_livro, "autor": autor_livro, "status": True}
-    
+
     livros[nome_livro] = novo_livro
 
     print(f"Livro '{nome_livro}' cadastrado com sucesso!")
@@ -53,6 +53,11 @@ def cadastrar_livro():
   
 def listar_livros():
     iniciar_app("Lista de livros cadastrados")
+    if livros:
+        for livro in livros.values():
+         print(f"\nLivro: {livro['livro']} | Autor: {livro['autor']} | Status: {'Lido' if livro['status'] else 'Não lido'}")
+    else:
+        print("Nenhum livro cadastrado.")
     input("Pressione Enter para voltar ao menu...")
     chamar_menu()
 def editar_livro():
