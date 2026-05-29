@@ -55,10 +55,10 @@ def listar_livros():
     iniciar_app("Lista de livros cadastrados")
     if livros:
         for livro in livros.values():
-         print(f"\nLivro: {livro['livro']} | Autor: {livro['autor']} | Status: {'Lido' if livro['status'] else 'Não lido'}")
+         print(f"\nLivro: {livro['livro'].ljust(20)} | Autor: {livro['autor'].ljust(15)} | Status: {'Lido' if livro['status'] else 'Não lido'}\n")
     else:
-        print("Nenhum livro cadastrado.")
-    input("Pressione Enter para voltar ao menu...")
+        print(" Nenhum livro cadastrado.")
+    input("\nPressione Enter para voltar ao menu...")
     chamar_menu()
 def editar_livro():
     iniciar_app("Edição de um livro cadastrado")
