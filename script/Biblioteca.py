@@ -61,7 +61,38 @@ def listar_livros():
     chamar_menu()
 def editar_livro():
     iniciar_app("Edição de um livro cadastrado")
-    input("Pressione Enter para voltar ao menu...")
+    nome_livro = input("Digite o nome do livro que deseja editar: ")
+    if nome_livro in livros:
+        livro = livros[nome_livro]
+        print(f"\nLivro: {livro['livro']} | Autor: {livro['autor']} | Status: {'Lido' if livro['status'] else 'Não lido'}\n")
+        print("Escolha o que deseja editar:")
+        print("1 - Editar nome do livro")
+        print("2 - Editar nome do autor")
+        print("3 - Marcar como lido/não lido")
+        print("0 - Voltar ao menu")
+
+        input_opcao = input("Digite a opção desejada: ")
+        if input_opcao.isdigit():
+            opcoes = int(input_opcao)
+            if opcoes == 1:
+                novo_nome = input("Digite o novo nome do livro: ")
+                livro['livro'] = novo_nome
+                livros[novo_nome] = livros.pop(nome_livro)  
+                print(f"Nome do livro atualizado para '{novo_nome}' com sucesso!")
+            elif opcoes == 2:
+                novo_autor = input("Digite o novo nome do autor: ")
+                livro['autor'] = novo_autor
+                print(f"Nome do autor atualizado para '{novo_autor}' com sucesso!")
+            elif opcoes == 3:
+                livro['status'] = not livro['status']
+                status_atualizado = 'Lido' if livro['status'] else 'Não lido'
+                print(f"Status do livro atualizado para '{status_atualizado}' com sucesso!")
+            elif opcoes == 0:
+                chamar_menu()
+            else:
+                print("Opção inválida. Tente novamente.")
+        else:
+            print("Entrada inválida. Por favor, digite um número.")
     chamar_menu()
 def sair():
     os.system('cls')
