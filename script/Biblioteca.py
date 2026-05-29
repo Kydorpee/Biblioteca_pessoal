@@ -93,6 +93,7 @@ def editar_livro():
                 print("Opção inválida. Tente novamente.")
         else:
             print("Entrada inválida. Por favor, digite um número.")
+    input("\nPressione Enter para voltar ao menu...")
     chamar_menu()
 def sair():
     os.system('cls')
