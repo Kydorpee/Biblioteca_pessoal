@@ -43,7 +43,7 @@ def cadastrar_livro():
     iniciar_app("Cadastro de um novo livro")
     nome_livro = input("Digite o nome do livro a ser cadastrado: ")
     autor_livro = input("Digite o nome do autor do livro: ")
-    novo_livro = {"livro": nome_livro, "autor": autor_livro, "status": True}
+    novo_livro = {"livro": nome_livro, "autor": autor_livro, "status": False}
 
     livros[nome_livro] = novo_livro
 
