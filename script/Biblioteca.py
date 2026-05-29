@@ -98,10 +98,6 @@ def sair():
     os.system('cls')
     iniciar_app("Saindo da aplicação...")
     
-    
-    
-    
-
 
 def main():
     chamar_menu()
