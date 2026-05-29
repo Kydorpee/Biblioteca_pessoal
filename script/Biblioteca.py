@@ -49,8 +49,7 @@ def cadastrar_livro():
 
     print(f"Livro '{nome_livro}' cadastrado com sucesso!")
     input("Pressione Enter para voltar ao menu...")
-    chamar_menu()
-  
+    chamar_menu() 
 def listar_livros():
     iniciar_app("Lista de livros cadastrados")
     if livros:
